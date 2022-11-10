@@ -32,6 +32,6 @@ jobs:
     - name: Push image to docker repository
       run: |
         docker login -u lampt1210 -p 12102022a@
-        docker image push lampt1210/first-repo:cmcdemo-common-service
+        docker image push cmcdemo-common-service
     
       
