@@ -20,12 +20,12 @@ jobs:
         java-version: '8'
         distribution: 'adopt'
     - name: Build with Maven
-      run: mvn --batch-mode --update-snapshots package -f pom.xml
+      run: mvn --batch-mode --update-snapshots package -Dmaven.test.skip -f pom.xml
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag lampt1210/first-repo:cmcdemo-common-service
   
   push:
-    
+    needs: build
     runs-on: ubuntu-18.04
     
     steps:
