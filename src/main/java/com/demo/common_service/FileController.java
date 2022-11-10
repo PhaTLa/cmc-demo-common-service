@@ -69,4 +69,9 @@ public class FileController {
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() + "\"")
                 .body(resource);
     }
+
+    @GetMapping("/api/plus")
+    public ResponseEntity<Integer> plusTwoNumber(@PathVariable Integer number1,@PathVariable Integer number2){
+        return ResponseEntity.ok(number1+number2);
+    }
 }
